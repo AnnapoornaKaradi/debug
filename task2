@@ -1,0 +1,25 @@
+Suggested pattern sample logic in key_vault.spec:
+adl = {
+            name = "adl"
+            numeric = "01"
+            rg_ref = "app"
+            skip_declarative_perms = local.envs_to_exceptions["${var.env_ref}_kv_non_declarative_perms"]
+            access_policies = merge(
+                local.key_vaults_env_base_access_policies,
+                {
+                    material_user_group = {
+                        object_id = local.my_mg.rbac.kv_material_user_group_oid
+                        key_permissions = [ "Get", "List", "Sign", "Verify" ],
+                        secret_permissions = [ "Get", "List" ],
+                        certificate_permissions = []
+                    }
+                    adf_identity_access_policy = {
+                        identity_ref = "adf-app-dev2-eus2-01" ## Code that will parse the name of the identity
+                        key_permissions = []
+                        secret_permissions = [ "Get", "List" ]
+                        certificate_permissions = []
+                    }
+                }
+            )
+
+Remaining piece of code will need to be done where the keyvault.tf and fetch the Azuread_application.
