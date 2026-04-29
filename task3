@@ -1,0 +1,7 @@
+There should be no key hardcoded into the aks.tf file need to turn that into a max_surge spec setting.
+
+
+
+    upgrade_settings {
+        max_surge = each.value.nodepool_key == "gpu" ? "1" : "33%"
+    }
