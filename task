@@ -1,0 +1,16 @@
+We should be leveraging azuread_application resources as oppose to hardcodding object ids into the codebase - https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/resources/application
+
+Goal is to remove as much of these and use references intstead.
+Image
+
+
+Example pattern for Keyvault access to using references:
+
+            exos_services_uai_access_policies = merge(
+                { printproxysvc = {
+                    uai_ref = "printproxysvc"
+                    key_permissions = []
+                    secret_permissions = [ "Get", "List" ]
+                    certificate_permissions = []
+                }},
+            )
