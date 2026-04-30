@@ -1,0 +1,17 @@
+2026-04-30T08:27:35.7688792Z [1m[31mError: [0m[0m[1mUnsupported attribute[0m
+2026-04-30T08:27:35.7689011Z 
+2026-04-30T08:27:35.7689725Z [0m  on aks.tf line 318, in resource "azurerm_kubernetes_cluster_node_pool" "env":
+2026-04-30T08:27:35.7690447Z  318: 					max_surge = nodepool_value[4m.max_surge[0m
+2026-04-30T08:27:35.7690924Z [0m
+2026-04-30T08:27:35.7691375Z This object does not have an attribute named "max_surge".
+2026-04-30T08:27:35.7691872Z [0m[0m
+2026-04-30T08:27:35.7815793Z [31m
+2026-04-30T08:27:35.7817363Z [1m[31mError: [0m[0m[1mUnsupported attribute[0m
+2026-04-30T08:27:35.7817997Z 
+2026-04-30T08:27:35.7820155Z [0m  on aks.tf line 318, in resource "azurerm_kubernetes_cluster_node_pool" "env":
+2026-04-30T08:27:35.7833194Z  318: 					max_surge = nodepool_value[4m.max_surge[0m
+2026-04-30T08:27:35.7833792Z [0m
+2026-04-30T08:27:35.7834931Z This object does not have an attribute named "max_surge".
+2026-04-30T08:27:35.7835562Z [0m[0m
+2026-04-30T08:27:35.7938250Z Terraform Plan Exit Code: 1
+2026-04-30T08:27:35.7953264Z 
